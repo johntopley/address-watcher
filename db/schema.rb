@@ -62,6 +62,6 @@ ActiveRecord::Schema.define(:version => 20080719141551) do
     t.datetime "updated_at"
   end
 
-  add_index "watches", ["name"], :name => "index_watches_on_name"
+  add_index "watches", ["name", "address"], :name => "index_watches_on_name_and_address"
 
 end
