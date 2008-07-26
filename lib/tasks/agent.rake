@@ -9,12 +9,11 @@ namespace :agent do
         rescue SocketError
           watch.actual = nil
         end
-        puts "#{watch.name} - expected #{watch.expected}, actual #{watch.actual}"
-        puts "Alert sent - #{watch.alert_sent?}"
+        # puts "#{watch.name} - expected #{watch.expected}, actual #{watch.actual}"
         if watch.actual != watch.expected && watch.actual != 'N/A'
           if watch.alert_sent? == false
             if watch.sms? && user.sms_configured?
-              puts 'Sending alert SMS'
+              # puts 'Sending alert SMS'
               begin
                 Twitter::Base.new(user.twitter_username, user.twitter_password).post(
                   "Address Watcher expected HTTP #{watch.expected} for #{watch.name}, but got HTTP #{watch.actual}.")
@@ -24,7 +23,7 @@ namespace :agent do
               end
             end
             if watch.email?
-              puts 'Sending alert email'
+              # puts 'Sending alert email'
             end
             watch.alert_sent = true
           end
