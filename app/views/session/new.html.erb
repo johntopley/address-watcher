@@ -1,0 +1,25 @@
+<% title('Sign In') %>
+<h1>Sign In</h1>
+<% if flash[:error] -%>
+<p class="error"><%= flash[:error] %></p>
+<% end -%>
+<% form_tag session_path do %>
+  <fieldset>
+    <p>
+      <label for="email">Email</label>
+      <%= text_field_tag 'email', nil, :maxlength => 100, :class => 'medium' %>
+    </p>
+    <p>
+      <label for="password">Password</label>
+      <%= password_field_tag 'password', nil, :maxlength => 40, :class => 'medium' %>
+    </p>
+    <p>
+      <span class="indented_checkbox">
+        <%= check_box_tag 'remember_me' %><label id="remember_me_label" class="checkbox_label" for="remember_me">Remember me on this computer</label>
+      </span>
+    </p>
+    <p>
+      <span class="indent"><%= submit_tag 'Sign In', :class => 'button' %></span>
+    </p>
+  </fieldset>
+<% end %>

@@ -1,0 +1,17 @@
+<div id="errors_container" style="display: none;">&nbsp;</div>
+<%= error_messages_for :user, :id => 'errors', :header_message => nil, :message => 'We had some problems saving your Twitter credentials:' %>
+<% remote_form_for @user do |f| %>
+  <fieldset>
+    <p>
+      <label for="user_twitter_username">Twitter Username</label>
+      <%= f.text_field :twitter_username, :maxlength => 15, :class => 'medium' %>
+    </p>
+    <p>
+      <label for="user_twitter_password">Twitter Password</label>
+      <%= f.password_field :twitter_password, :maxlength => 30, :class => 'medium' %>
+    </p>
+    <p>
+      <span class="indent"><%= f.submit 'Save', :class => 'button' %></span>
+    </p>
+  </fieldset>
+<% end %>

@@ -1,0 +1,30 @@
+<% title('Watches') %>
+<h1><%= gravatar %>Watches for <%= current_user.name %></h1>
+<p id="updated"><%= current_user.watches_updated_on %></p>
+<p id="feed"><%= feed_link %></p>
+<% if @watches.empty? -%>
+<div class="help">
+  <p><strong>Address Watcher</strong> makes regular HTTP requests to keep an eye on URLs that are important to you. It can alert you if the actual status is different from what you’re expecting. You will only be sent an email and/or SMS the first time the actual status is different from the expected.</p>
+  <h3>Add Your First Watch</h3>
+</div>
+<% else -%>
+<table id="watches" summary="A list of watches for <%= current_user.name %>">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Expected</th>
+      <th>Actual</th>
+      <th>Email</th>
+      <th>SMS</th>
+      <th />
+      <th><%= delete_all_link %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render :partial => @watches %>
+  </tbody>
+</table>
+<%= will_paginate @watches, :param_name => 'p' %>
+<% end -%>
+<%= render :partial => 'watchform', :locals => { :button => 'addwatch' } %>

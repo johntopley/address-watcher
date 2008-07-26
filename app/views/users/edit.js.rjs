@@ -1,0 +1,15 @@
+if flash[:invalid_user]
+  page.hide('testmessage')
+  @user = flash[:invalid_user]
+  flash[:invalid_user] = nil
+  page.replace_html('errors_container',
+    error_messages_for(:user, :id => 'errors', :class => nil,
+      :header_message => nil,
+      :message => 'We had some problems saving your Twitter credentials:'))
+  page.visual_effect(:appear, 'errors_container')
+  page['errors'].scrollTo
+else
+  page.hide('errors_container')
+  page.visual_effect(:appear, 'testmessage')
+  page['testmessage'].scrollTo
+end

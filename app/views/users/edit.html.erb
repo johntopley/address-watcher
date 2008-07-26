@@ -1,0 +1,23 @@
+<% title('Configure SMS') %>
+<h1>Configure SMS</h1>
+<div class="help">
+  <p><%= image_tag 'twitter.png', :size => '210x49', :alt => 'Twitter logo' %></p>
+  <p>
+    <strong>Address Watcher</strong> can send an SMS to your mobile phone when the actual HTTP status code differs to what you’re expecting. To enable this feature you need to
+    create a new Twitter account for the sole use of Address Watcher. Then simply follow that account from your personal Twitter account, with device updates enabled.
+  </p>
+  <h3>Detailed Steps</h3>
+  <ul>
+    <li>Sign up for a new Twitter account that will only be used by Address Watcher<br /><span class="help_note">Hint: send yourself an invite for a Gmail account for a unique email address to sign up with</span></li>
+    <li>Enter the user name and password of your new Twitter account below<br /><span class="help_note">Address Watcher will use these details to post updates using the Twitter API</span></li>
+  </ul>
+  <%= render :partial => 'twitterform' %>
+  <ul>
+    <li>Sign in to your new Twitter account and change the settings so that updates are protected</li>
+    <li>Sign in to your existing personal Twitter account and request to follow your new Twitter account</li>
+    <li>Switch back to your new Twitter account and grant the request to be followed by your personal Twitter account</li>
+    <li>Configure your personal Twitter account so that device updates from your new Twitter account are turned on</li>
+    <% if current_user.sms_configured? %><li id="testmessage"><% else -%><li id="testmessage" style="display: none;"><% end -%>Now <%= link_to 'send a test message', test_sms_path %> to see if it worked<br /><span class="help_note">You should receive an SMS confirmation</span><br /><br /><span id="test_sms_confirmation"><%= flash[:notice] %></span></li>
+  </ul>
+  <p><%= link_to 'Back To My Watches', watches_path %></p>
+</div>

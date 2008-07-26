@@ -1,0 +1,37 @@
+<%= error_messages_for :watch, :id => 'errors', :header_message => nil, :message => 'We had some problems saving the watch:' %>
+<% form_for @watch do |f| %>
+  <fieldset>
+    <p>
+      <label for="watch_name">Name</label>
+    <% if params[:action] == 'index' -%>
+      <%= f.text_field :name, :maxlength => 50, :class => 'wide' %>
+    <% else -%>
+      <%= f.text_field :name, :maxlength => 50, :class => 'wide', :disabled => 'disabled' %>
+    <% end -%>
+    </p>
+    <p>
+      <label for="watch_address">Address</label>
+      <%= f.text_field :address, :maxlength => 500, :class => 'wide' %>
+    </p>
+    <p>
+      <label for="watch_expected">Expected</label>
+      <select name="watch[expected]" id="watch_expected">
+        <%= option_groups_from_collection_for_select(StatusType::STATUSES, :status_codes, :name, :code, :code_description, @watch.expected) %>
+      </select>
+    </p>
+    <p>
+      <span class="note">Alerts</span>
+      <span class="indented_checkbox">
+        <%= f.check_box :email %><label class="checkbox_label" for="watch_email">Send me an email if actual and expected differ</label>
+      </span>
+    </p>
+    <p>
+      <span class="indented_checkbox">
+        <%= f.check_box :sms %><label class="checkbox_label" for="watch_sms">Send me an SMS using Twitter if actual and expected differ (<%= link_to 'configure SMS', configure_sms_path %>)</label>
+      </span>
+    </p>
+    <p>
+      <span class="indent"><%= render :partial => button, :locals => { :f => f } %></span>
+    </p>
+  </fieldset>
+<% end %>

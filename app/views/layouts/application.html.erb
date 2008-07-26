@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title><%= yield :title || 'Address Watcher' %></title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <%= javascript_include_tag 'prototype', 'effects', 'application' %>
+    <%= stylesheet_link_tag 'styles' %>
+    <!--[if gte IE 6]>
+      <style type="text/css">
+        @import '/stylesheets/ie.css';
+      </style>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="content">
+      <div id="logo">
+        <h2><span id="address">Address</span>Watcher</h2>
+      </div>
+    <% if logged_in? -%>
+      <div id="header">
+        <%= link_to 'Sign Out', signout_path %>
+      </div>
+    <% end -%>
+      <%= yield %>
+    </div>
+    <div id="footer">
+      <p>Copyright &copy; 2008 <a href="http://www.johntopley.com/">John Topley</a></p>
+    </div>
+  </body>
+</html>

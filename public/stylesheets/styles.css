@@ -1,0 +1,320 @@
+a:link, a:visited, a:active {
+  color: #2438A6;
+}
+
+a, #feed #feedlink, {
+  border-bottom: 1px solid #2438A6;
+  color: #2438A6;
+  text-decoration: none;
+}
+
+#feed a:hover, a.crud_link:hover {
+  background: transparent; /* Don't change the background for icons when hovering */
+}
+
+a.crud_link {
+  border-bottom: none;
+}
+
+a:hover, #feed #feedlink:hover {
+  background: #445EF2;
+  color: #FFF;
+}
+
+body {
+  background: #FFF url(../images/background.png) left top repeat-x;
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+fieldset {
+  background: #FFF url(../images/fieldset_background.png) left top repeat-x;
+  border: 0;
+  border-top: 2px solid #798BF2;
+  margin: 1em;
+  padding-top: 1em;
+}
+
+fieldset p {
+  clear: both;
+  margin: 0;
+  padding: 8px 0;
+  position: relative;
+  width: 650px;
+}
+
+form {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h3 {
+  color: #445EF2;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: large;
+  margin-left: 15px;
+}
+
+h2 {
+  color: #FFF;
+  font-size: 18px;
+  position: absolute;
+  right: 0;
+  text-transform: lowercase;
+  top: -42px;
+}
+
+h3 {
+  font-size: medium;
+}
+
+img {
+  border: 0;
+}
+
+input {
+  color: #1F2C73;
+  float: left;
+  font-size: medium;
+}
+
+label, .note {
+  color: #2438A6;
+  float: left;
+  margin-top: 0.4em;
+  margin-right: 20px;
+  text-align: right;
+  width: 140px;
+}
+
+li {
+  margin-bottom: 1em;
+}
+
+ul {
+  color: #2438A6;
+  margin-left: 20px;
+  padding: 0;
+}
+
+optgroup {
+  color: #445EF2;
+  font-style: normal;
+}
+
+option {
+  color: #1F2C73;
+}
+
+table {
+  border-collapse: collapse;
+  font-size: small;
+  margin: 1em;
+}
+
+thead {
+  background: #1F2C73;
+  color: #FFF;
+}
+
+th, td {
+  text-align: left;
+  padding: 5px;
+}
+
+th {
+  vertical-align: top;
+}
+
+td {
+  color: #2438A6;
+}
+
+#cancel_link {
+  font-size: small;
+  padding-top: 0.2em;
+}
+
+#content {
+  background: #FFF;
+  border: 2px solid #1F2C73;
+  border-top: 20px solid #1F2C73;
+  margin: 10px auto 0;
+  padding: 10px;
+  position: relative;
+  width: 750px;
+}
+
+#errors, #test_sms_confirmation, .error, .unexpected {
+  color: #D91136;
+}
+
+#errors, .error {
+  font-size: medium;
+  font-weight: bold;
+  margin-left: 15px;
+  padding: 2px 5px;
+  width: 710px;
+}
+
+#errors {
+  margin: -0.5em 0 -1em 10px;
+}
+
+#errors p {
+  margin-bottom: -5px;
+}
+
+#errors ul {
+  color: #A65746;
+  font-size: small;
+  font-weight: normal;
+  list-style: square;
+}
+
+#errors li {
+  margin: 0 0 0.2em;
+}
+
+#feed {
+  font-size: small;
+  margin: 0 0 0 1em;
+  padding: 0;
+}
+
+#feed a {
+  border-bottom: none;
+}
+
+#footer {
+  color: #2438A6;
+  font-family: Arial, sans-serif;
+  font-size: x-small;
+  margin: 0.5em auto 0;
+  padding: 0;
+  width: 750px;
+}
+
+#footer p {
+  margin: 0 auto;
+  text-align: center;
+  width: 300px;
+}
+
+#header a {
+  float: right;
+  font-size: small;
+}
+
+#logo {
+  position: relative;
+}
+
+#logo #address {
+  color: #798BF2;
+}
+
+#test_sms_confirmation {
+  font-weight: bold;
+}
+
+#updated {
+  color: #1F27C3;
+  font-size: xx-large;
+  margin: -0.2em 0 0.5em 75px;
+  padding: 0;
+  width: 100%;
+}
+
+.button {
+  color: #000;
+  font-size: small;
+}
+
+.checkbox_label {
+  margin-top: 4px;
+  text-align: left;
+  width: 300px;
+}
+
+.even {
+  background: #CCC;
+}
+
+.gravatar {
+  margin-right: 10px;
+}
+
+.help {
+  color: #A65746;
+  font-size: medium;
+  margin: 0 15px;
+}
+
+.help a {
+  font-size: small;
+}
+
+.help li a {
+  font-size: medium;
+}
+
+.help_note {
+  color: #445EF2;
+  font-size: small;
+  font-style: italic;
+}
+
+.indent, .indented_checkbox {
+  display: block;
+  margin-top: 0.5em;
+  margin-left: 160px;
+}
+
+.indented_checkbox {
+  font-size: small;
+}
+
+.medium, .wide {
+  border: 1px solid #CCC;
+  padding: 4px;
+}
+
+.medium {
+  width: 220px;
+}
+
+.pagination {
+  color: #1F27C3;
+  font-size: 90%;
+  font-weight: bold;
+  margin: 10px 0 10px 15px;
+}
+
+.pagination a {
+  background-color: #FFF;
+  border: 1px solid #CCC;
+  color: #798BF2;
+  font-weight: normal;
+  margin-right: 1px;
+  padding: 2px 4px 2px;
+  text-decoration: none;
+}
+
+.pagination a:hover {
+  background-color: #FFFEF5;
+  border: 1px solid #798BF2;
+  color: #1F27C3;
+}
+
+.pagination .disabled {
+  display: none;
+}
+
+.wide {
+  width: 320px;
+}

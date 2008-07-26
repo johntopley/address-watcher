@@ -1,0 +1,10 @@
+<tr class="<%= cycle('odd', 'even') %>">
+  <td><%= h(watch.name) %></td>
+  <td><%= link_to(h(watch.address), watch.address) %></td>
+  <td><%= h(watch.expected) %></td>
+  <td><%= format_actual(watch) %></td>
+  <td><%= email_on(watch) %></td>
+  <td><%= sms_on(watch) %></td>
+  <td><%= edit_link(watch) %></td>
+  <td><%= delete_link(watch) %></td>
+</tr>
