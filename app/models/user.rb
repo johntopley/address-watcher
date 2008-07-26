@@ -6,16 +6,24 @@ class User < ActiveRecord::Base
   # Virtual attribute for the unencrypted password
   attr_accessor :password
 
-  validates_presence_of     :email
-  validates_presence_of     :password,                   :if => :password_required?
-  validates_presence_of     :password_confirmation,      :if => :password_required?
-  validates_length_of       :password, :within => 4..40, :if => :password_required?
-  validates_confirmation_of :password,                   :if => :password_required?
-  validates_length_of       :email,    :within => 3..100
+  validates_presence_of     :email,
+                            :message => 'must be entered'
+  validates_presence_of     :password,
+                            :message => 'must be entered',
+                            :if => :password_required?
+  validates_presence_of     :password_confirmation,
+                            :message => 'must be entered',
+                            :if => :password_required?
+  validates_length_of       :password, :within => 4..40,
+                            :if => :password_required?
+  validates_confirmation_of :password,
+                            :if => :password_required?
+  validates_length_of       :email, :within => 3..100
   validates_uniqueness_of   :email, :case_sensitive => false
   validates_format_of       :email,
                             :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/,
-                            :message => 'doesn’t look like a valid address'
+                            :message => 'doesn’t look like a valid address',
+                            :if => :has_email?
   validates_presence_of     :twitter_username,
                             :message => 'must be entered',
                             :if => :has_twitter_password?
@@ -113,6 +121,10 @@ class User < ActiveRecord::Base
   private
   def generate_feed_guid
     @attributes['feed_guid'] = UUID.random_create.to_s
+  end
+  
+  def has_email?
+    email.present?
   end
   
   def has_twitter_password?
