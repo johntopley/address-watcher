@@ -12,7 +12,10 @@ class UsersController < ApplicationController
   def create
     redirect_to home_path and return unless APP_CONFIG['signup_enabled']
     cookies.delete :auth_token
-    @user = User.create!(params[:user])
+    @user = User.create(params[:user])
+    @user.forenames = params[:user][:forenames]
+    @user.surname = params[:user][:surname]
+    @user.save!
     self.current_user = @user
     redirect_back_or_default('/')
     flash[:notice] = "Thanks for signing up!"
