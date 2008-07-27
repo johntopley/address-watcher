@@ -41,10 +41,10 @@ class Watch < ActiveRecord::Base
     
   private
   def has_address?
-    address.present?
+    !address.blank?
   end
   
   def has_name?
-    name.present?
+    !name.blank?
   end
 end

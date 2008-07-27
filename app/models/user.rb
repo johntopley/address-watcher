@@ -102,7 +102,7 @@ class User < ActiveRecord::Base
   end
   
   def sms_configured?
-    twitter_username.present? && twitter_password.present?
+    has_twitter_username? && has_twitter_password?
   end
 
   protected
@@ -124,14 +124,14 @@ class User < ActiveRecord::Base
   end
   
   def has_email?
-    email.present?
+    !email.blank?
   end
   
   def has_twitter_password?
-    twitter_password.present?
+    !twitter_password.blank?
   end
   
   def has_twitter_username?
-    twitter_username.present?
+    !twitter_username.blank?
   end
 end
