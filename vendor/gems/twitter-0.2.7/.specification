@@ -1,0 +1,119 @@
+--- !ruby/object:Gem::Specification 
+name: twitter
+version: !ruby/object:Gem::Version 
+  version: 0.2.7
+platform: ruby
+authors: 
+- John Nunemaker
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2008-07-06 00:00:00 +01:00
+default_executable: twitter
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: hpricot
+  type: :runtime
+  version_requirement: 
+  version_requirements: !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: "0"
+    version: 
+- !ruby/object:Gem::Dependency 
+  name: activesupport
+  type: :runtime
+  version_requirement: 
+  version_requirements: !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: "0"
+    version: 
+description: a command line interface for twitter, also a library which wraps the twitter api
+email: nunemaker@gmail.com
+executables: 
+- twitter
+extensions: []
+
+extra_rdoc_files: 
+- History.txt
+- License.txt
+- Manifest.txt
+- README.txt
+files: 
+- CHANGELOG
+- History.txt
+- License.txt
+- Manifest.txt
+- README.txt
+- Rakefile
+- bin/twitter
+- config/hoe.rb
+- config/requirements.rb
+- examples/twitter.rb
+- lib/twitter.rb
+- lib/twitter/base.rb
+- lib/twitter/command.rb
+- lib/twitter/direct_message.rb
+- lib/twitter/easy_class_maker.rb
+- lib/twitter/rate_limit_status.rb
+- lib/twitter/status.rb
+- lib/twitter/user.rb
+- lib/twitter/version.rb
+- script/destroy
+- script/generate
+- script/txt2html
+- setup.rb
+- spec/base_spec.rb
+- spec/direct_message_spec.rb
+- spec/fixtures/followers.xml
+- spec/fixtures/friends.xml
+- spec/fixtures/friends_for.xml
+- spec/fixtures/friends_lite.xml
+- spec/fixtures/friends_timeline.xml
+- spec/fixtures/public_timeline.xml
+- spec/fixtures/rate_limit_status.xml
+- spec/fixtures/status.xml
+- spec/fixtures/user.xml
+- spec/fixtures/user_timeline.xml
+- spec/spec.opts
+- spec/spec_helper.rb
+- spec/status_spec.rb
+- spec/user_spec.rb
+- tasks/deployment.rake
+- tasks/environment.rake
+- tasks/website.rake
+- twitter.gemspec
+has_rdoc: true
+homepage: http://twitter.rubyforge.org
+post_install_message: 
+rdoc_options: 
+- --main
+- README.txt
+require_paths: 
+- bin
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+requirements: []
+
+rubyforge_project: twitter
+rubygems_version: 1.2.0
+signing_key: 
+specification_version: 2
+summary: a command line interface for twitter, also a library which wraps the twitter api
+test_files: []
+
