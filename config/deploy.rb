@@ -9,8 +9,10 @@ set :port,        30000
 #ssh_options[:forward_agent] = true
 
 set :deploy_to, "/home/deploy/public_html/#{application}"
-
+set :deploy_via, :copy
 
 role :app, domain
 role :web, domain
 role :db,  domain, :primary => true
+
+set :runner, user
