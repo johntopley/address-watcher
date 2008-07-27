@@ -15,8 +15,8 @@ namespace :agent do
             if watch.sms? && user.sms_configured?
               # puts 'Sending alert SMS'
               begin
-                Twitter::Base.new(user.twitter_username, user.twitter_password).post(
-                  "Address Watcher expected HTTP #{watch.expected} for #{watch.name}, but got HTTP #{watch.actual}.")
+                # Twitter::Base.new(user.twitter_username, user.twitter_password).post(
+                #   "Address Watcher expected HTTP #{watch.expected} for #{watch.name}, but got HTTP #{watch.actual}.")
               
               # Couldn't send SMS - ignore
               rescue NoMethodError

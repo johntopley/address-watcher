@@ -4,7 +4,7 @@ class TweetsController < ApplicationController
   def create
     username = current_user.twitter_username
     password = current_user.twitter_password
-    Twitter::Base.new(username, password).post('Congratulations! Address Watcher is now able to send you SMS updates using Twitter.')
+    #Twitter::Base.new(username, password).post('Congratulations! Address Watcher is now able to send you SMS updates using Twitter.')
     flash[:notice] = 'SMS message sent'
     redirect_to configure_sms_path
   rescue NoMethodError
