@@ -15,5 +15,6 @@ role :web, domain
 role :db,  domain, :primary => true
 
 set :runner, user
+set :mongrel_conf, "#{shared_path}/config/mongrel_cluster.yml"
 
 after :deploy, 'deploy:link_config_files'
