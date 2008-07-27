@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20080719141551) do
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "status_codes", :force => true do |t|
-    t.integer "status_type_id"
+    t.integer "status_type_id", :limit => 11
     t.string  "code"
     t.string  "description"
   end
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(:version => 20080719141551) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
   create_table "watches", :force => true do |t|
-    t.integer  "user_id",                                      :null => false
+    t.integer  "user_id",    :limit => 11,                     :null => false
     t.string   "name",       :limit => 50,  :default => "",    :null => false
     t.string   "address",    :limit => 500, :default => "",    :null => false
     t.string   "expected",                  :default => "",    :null => false

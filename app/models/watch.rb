@@ -38,7 +38,7 @@ class Watch < ActiveRecord::Base
   def to_param
     name.downcase.gsub(/ /, '-')
   end
-    
+  
   private
   def has_address?
     !address.blank?

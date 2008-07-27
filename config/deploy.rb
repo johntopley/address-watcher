@@ -6,7 +6,6 @@ set :repository,  'git@github.com:johntopley/address-watcher.git'
 set :scm,         'git'
 set :branch,      'master'
 set :port,        30000
-#ssh_options[:forward_agent] = true
 
 set :deploy_to, "/home/deploy/public_html/#{application}"
 set :deploy_via, :copy
