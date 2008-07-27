@@ -16,3 +16,5 @@ role :web, domain
 role :db,  domain, :primary => true
 
 set :runner, user
+
+after :deploy, 'deploy:link_config_files'
