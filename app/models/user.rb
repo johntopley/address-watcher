@@ -98,7 +98,7 @@ class User < ActiveRecord::Base
   
   def watches_updated_on
     return 'First update pending' if watches_updated_at.nil?
-    "Updated on #{watches_updated_at.utc.strftime('%d %B %Y at %H:%M %Z')}"
+    "Updated on #{watches_updated_at.utc.strftime('%d %B %Y at %H:%M UTC')}"
   end
   
   def sms_configured?
