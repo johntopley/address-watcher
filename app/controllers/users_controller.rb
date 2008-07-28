@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_filter :login_required, :only => [:edit, :update]
 
   def new
-    redirect_to home_path unless APP_CONFIG['signup_enabled']
+    redirect_to root_path unless APP_CONFIG['signup_enabled']
     @user = User.new
     if flash[:invalid_user]
       @user = flash[:invalid_user]
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    redirect_to home_path and return unless APP_CONFIG['signup_enabled']
+    redirect_to root_path and return unless APP_CONFIG['signup_enabled']
     cookies.delete :auth_token
     @user = User.create(params[:user])
     @user.forenames = params[:user][:forenames]
