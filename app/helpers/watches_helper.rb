@@ -43,10 +43,10 @@ module WatchesHelper
   end
   
   def gravatar
-    if Rails.env == 'production'
-      gravatar_for(current_user, :size => 50,
-                                 :default => APP_CONFIG['gravatar_default'])
-    end
+    # if Rails.env == 'production'
+    #   gravatar_for(current_user, :size => 50,
+    #                      :default => APP_CONFIG['gravatar_default'])
+    # end
   end
   
   def sms_on(watch)
