@@ -1,5 +1,5 @@
 = Address Watcher
 
-Address Watcher (http://www.addresswatcher.com) makes regular HTTP requests to
+Address Watcher (http://addresswatcher.com) makes regular HTTP requests to
 keep an eye on URLs that are important to you. It can alert you if the actual
 status is different from what you’re expecting.
