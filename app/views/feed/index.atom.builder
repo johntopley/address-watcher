@@ -16,7 +16,7 @@ xml.feed("xml:lang" => 'en', "xmlns" => 'http://www.w3.org/2005/Atom') do
       xml.content("#{@user.watches_updated_on}. Expected HTTP #{watch.expected}, actual was #{watch.actual}.")
       
       xml.author do |author|
-        author.name(@user.name)
+        author.name('Address Watcher')
       end
     end
   end
