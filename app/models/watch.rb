@@ -39,6 +39,10 @@ class Watch < ActiveRecord::Base
     name.downcase.gsub(/ /, '-')
   end
   
+  def to_s
+    "(#{user.name}) Expected HTTP #{expected} for #{name} (#{address}), but got HTTP #{actual}. Alert sent: #{alert_sent?}."
+  end
+  
   private
   def has_address?
     !address.blank?

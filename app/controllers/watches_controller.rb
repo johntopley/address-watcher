@@ -30,7 +30,8 @@ class WatchesController < ApplicationController
   end
   
   def update
-    @watch.alert_sent = false # Must reset alert flag
+    @watch.alert_sent = false if @watch.changed?
+    @watch.actual = nil if @watch.expected_changed?
     @watch.update_attributes!(params[:watch])
     redirect_to watches_path
   rescue ActiveRecord::RecordInvalid => error
