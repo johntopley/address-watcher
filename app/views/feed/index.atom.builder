@@ -3,7 +3,7 @@ xml.feed("xml:lang" => 'en', "xmlns" => 'http://www.w3.org/2005/Atom') do
   xml.title("Watches For #{@user.name} - Address Watcher", :type => :html)
   xml.link(:rel => 'self', :href => feed_url(@user.feed_guid))
   xml.link(:rel => 'alternate', :href => root_url)
-  xml.updated(@watches.first.updated_at.xmlschema)
+  xml.updated(@user.watches_updated_at.xmlschema)
   xml.id("http://#{request.host}/")
   
   for watch in @watches
