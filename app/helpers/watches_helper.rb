@@ -54,8 +54,8 @@ module WatchesHelper
   end
   
   def watches_updated_on
-    last_updated = current_user.watches_updated_at.utc
-    return 'First update pending' if last_updated.nil?
-    "Updated #{time_ago_in_words(last_updated)} ago"
+    return 'First update pending' if current_user.watches.empty? ||
+      current_user.watches_updated_at.nil?
+    "Updated #{time_ago_in_words(current_user.watches_updated_at.utc)} ago"
   end
 end
