@@ -42,6 +42,7 @@ namespace :agent do
             if watch.email?
               # puts "Sending alert email to #{user.email}."
               logger.info "Sending alert email to #{user.email}."
+              Alert.deliver_alert(user, watch)
             end
             watch.alert_sent = true
           end
