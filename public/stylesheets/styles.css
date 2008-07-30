@@ -126,12 +126,12 @@ th, td {
   padding: 5px;
 }
 
-th {
-  vertical-align: top;
-}
-
 td {
   color: #2438A6;
+}
+
+tr {
+  vertical-align: top;
 }
 
 #cancel_link {
