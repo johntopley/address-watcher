@@ -1,6 +1,6 @@
 class Alert < ActionMailer::Base
   def alert(user, watch, sent_at = Time.now)
-    subject    'Address Watcher Alert Notification'
+    subject    "Address Watcher Alert For #{watch.name}"
     recipients user.email
     from       'alert@addresswatcher.com'
     sent_on    sent_at
