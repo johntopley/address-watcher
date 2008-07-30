@@ -40,7 +40,7 @@ class Watch < ActiveRecord::Base
   end
   
   def to_s
-    "(#{user.name}) Expected HTTP #{expected} for #{name} (#{address}), but got HTTP #{actual}. Alert sent: #{alert_sent?}."
+    "(#{user.name}) Expected HTTP #{expected} for #{name} (#{address}), actual was #{actual}. Alert sent: #{alert_sent?}."
   end
   
   private
