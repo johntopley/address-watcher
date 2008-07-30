@@ -96,18 +96,12 @@ class User < ActiveRecord::Base
     save(false)
   end
   
-  def watches_updated_on
-    return 'First update pending' if watches_updated_at.nil?
-    "Updated on #{watches_updated_at.utc.strftime('%d %B %Y at %H:%M UTC')}"
-  end
-  
   def sms_configured?
     has_twitter_username? && has_twitter_password?
   end
 
   protected
   
-  # before filter 
   def encrypt_password
     return if password.blank?
     self.salt = Digest::SHA1.hexdigest("--#{Time.now.to_s}--#{email}--") if new_record?

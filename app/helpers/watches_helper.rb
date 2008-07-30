@@ -52,4 +52,10 @@ module WatchesHelper
   def sms_on(watch)
     image_tag('tick.png', :size => '16x16', :alt => '') if watch.sms?
   end
+  
+  def watches_updated_on
+    last_updated = current_user.watches_updated_at.utc
+    return 'First update pending' if last_updated.nil?
+    "Updated #{time_ago_in_words(current_user.watches_updated_at.utc)} ago"
+  end
 end
