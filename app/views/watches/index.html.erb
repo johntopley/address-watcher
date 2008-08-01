@@ -1,6 +1,6 @@
 <% title('Watches') %>
 <h1><%= gravatar_image %>Watches for <%= current_user.name %></h1>
-<p id="updated"><%= watches_updated_on %></p>
+<p id="updated"><%= watches_updated_on current_user %></p>
 <p id="feed"><%= feed_link %></p>
 <% if @watches.empty? -%>
 <div class="help">

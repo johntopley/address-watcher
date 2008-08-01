@@ -13,7 +13,7 @@ xml.feed("xml:lang" => 'en', "xmlns" => 'http://www.w3.org/2005/Atom') do
       xml.published(watch.created_at.xmlschema)
       xml.updated(watch.updated_at.xmlschema)
       xml.link(:rel => :alternate, :href => "#{watch_url(watch.to_param)}")
-      xml.content("#{@user.watches_updated_on}. Expected HTTP #{watch.expected}, actual was #{watch.actual}.")
+      xml.content("#{watches_updated_on(@user)}. Expected HTTP #{watch.expected}, actual was #{watch.actual}.")
       
       xml.author do |author|
         author.name('Address Watcher')
