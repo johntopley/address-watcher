@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Down For Maintenance - Address Watcher</title>
+    <title>Back Soon - Address Watcher</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link href="/stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css" />
@@ -17,9 +17,11 @@
       <div id="logo">
         <h2><span id="address">Address</span>Watcher</h2>
       </div>
-      <h1>Down For Maintenance</h1>
-      <p>We’re currently offline for <%= reason ? reason : "maintenance" %> as of <%= Time.now.utc.strftime("%I:%M %p %Z") %>.</p>
-      <p>Sorry for the inconvenience. We’ll be back <%= deadline ? "by #{deadline}" : "shortly" %>.</p>
+      <h1>Back Soon</h1>
+      <div class="help" style="height: 15em;">
+        <p>We’re currently offline for <%= reason ? reason : 'maintenance' %> as of <%= Time.now.utc.strftime('%H:%M %Z') %>.</p>
+        <p>Sorry for the inconvenience. We’ll be back <%= deadline ? "by #{deadline}" : 'shortly' %>.</p>
+      </div>
     </div>
     <div id="footer">
       <p>Copyright &copy; 2008 <a href="http://www.johntopley.com/">John Topley</a></p>
