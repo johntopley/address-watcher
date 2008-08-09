@@ -149,11 +149,11 @@ tr {
   width: 750px;
 }
 
-#errors, #test_sms_confirmation, .error, .unexpected {
+#errors, #http_error, #test_sms_confirmation, .error, .unexpected {
   color: #D91136;
 }
 
-#errors, .error {
+#errors, #http_error, .error {
   font-size: medium;
   font-weight: bold;
   margin-left: 15px;
@@ -208,6 +208,11 @@ tr {
 #header a {
   float: right;
   font-size: small;
+}
+
+#http_error {
+  height: 15em;
+  margin-left: 10px;
 }
 
 #logo {
