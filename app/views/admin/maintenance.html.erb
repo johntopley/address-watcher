@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Down For Maintenance - Address Watcher</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link href="/stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css" />
+    <!--[if gte IE 6]>
+      <style type="text/css">
+        @import '/stylesheets/ie.css';
+      </style>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="content">
+      <div id="logo">
+        <h2><span id="address">Address</span>Watcher</h2>
+      </div>
+      <h1>Down For Maintenance</h1>
+      <p>We’re currently offline for <%= reason ? reason : "maintenance" %> as of <%= Time.now.utc.strftime("%I:%M %p %Z") %>.</p>
+      <p>Sorry for the inconvenience. We’ll be back <%= deadline ? "by #{deadline}" : "shortly" %>.</p>
+    </div>
+    <div id="footer">
+      <p>Copyright &copy; 2008 <a href="http://www.johntopley.com/">John Topley</a></p>
+    </div>
+  </body>
+</html>
