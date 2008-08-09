@@ -25,7 +25,7 @@ namespace :agent do
         # puts watch
         logger.info watch.to_s
         
-        if watch.actual != watch.expected && (watch.actual != 'Pending' || watch.actual != 'Timed Out')
+        if watch.actual != watch.expected && (watch.actual != 'Pending' && watch.actual != 'Timed Out')
           if watch.alert_sent? == false
             if watch.sms? && user.sms_configured?
               # puts "Sending alert SMS to #{user.twitter_username}."
