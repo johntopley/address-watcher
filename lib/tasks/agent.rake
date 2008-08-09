@@ -25,26 +25,28 @@ namespace :agent do
         # puts watch
         logger.info watch.to_s
         
-        if watch.actual != watch.expected && (watch.actual != 'Pending' && watch.actual != 'Timed Out')
-          if watch.alert_sent? == false
-            if watch.sms? && user.sms_configured?
-              # puts "Sending alert SMS to #{user.twitter_username}."
-              logger.info "Sending alert SMS to #{user.twitter_username}."
-              begin
-                Twitter::Base.new(user.twitter_username, user.twitter_password).post(
-                  "Address Watcher expected HTTP #{watch.expected} for #{watch.name}, but got HTTP #{watch.actual}.")
-              
-              # Couldn't send SMS - ignore
-              rescue NoMethodError
-                logger.error "Unable to send alert SMS to #{user.twitter_username}"
+        if watch.actual != watch.expected
+          if watch.actual != 'Pending' && watch.actual != 'Timed Out'
+            if watch.alert_sent? == false
+              if watch.sms? && user.sms_configured?
+                # puts "Sending alert SMS to #{user.twitter_username}."
+                logger.info "Sending alert SMS to #{user.twitter_username}."
+                begin
+                  Twitter::Base.new(user.twitter_username, user.twitter_password).post(
+                    "Address Watcher expected HTTP #{watch.expected} for #{watch.name}, but got HTTP #{watch.actual}.")
+                
+                # Couldn't send SMS - ignore
+                rescue NoMethodError
+                  logger.error "Unable to send alert SMS to #{user.twitter_username}"
+                end
               end
+              if watch.email?
+                # puts "Sending alert email to #{user.email}."
+                logger.info "Sending alert email to #{user.email}."
+                Alert.deliver_alert(user, watch)
+              end
+              watch.alert_sent = true
             end
-            if watch.email?
-              # puts "Sending alert email to #{user.email}."
-              logger.info "Sending alert email to #{user.email}."
-              Alert.deliver_alert(user, watch)
-            end
-            watch.alert_sent = true
           end
           
         # The actual equals the expected, so reset the alert_sent flag
