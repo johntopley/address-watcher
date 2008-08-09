@@ -28,7 +28,7 @@ class Watch < ActiveRecord::Base
   end
   
   def actual
-    self[:actual].blank? ? 'N/A' : self[:actual]
+    self[:actual].blank? ? 'Pending' : self[:actual]
   end
   
   def permalink

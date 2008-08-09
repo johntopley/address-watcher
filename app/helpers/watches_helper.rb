@@ -36,7 +36,7 @@ module WatchesHelper
   end
   
   def format_actual(watch)
-    if watch.actual != 'N/A' && watch.actual != watch.expected
+    if watch.actual != 'Pending' && watch.actual != watch.expected
       return "<span class=\"unexpected\">#{h(watch.actual)}</span>"
     end
     h(watch.actual)

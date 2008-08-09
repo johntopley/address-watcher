@@ -15,7 +15,7 @@ namespace :agent do
         rescue Timeout::Error
           # puts "Request to #{watch.address} timed out."
           logger.warn "Request to #{watch.address} timed out."
-          watch.actual = nil
+          watch.actual = 'Timed Out'
         rescue SocketError => error
           # puts "SocketError whilst getting HTTP response for #{watch.address}: #{error}"
           logger.error "SocketError whilst getting HTTP response for #{watch.address}: #{error}"
@@ -25,7 +25,7 @@ namespace :agent do
         # puts watch
         logger.info watch.to_s
         
-        if watch.actual != watch.expected && watch.actual != 'N/A'
+        if watch.actual != watch.expected && (watch.actual != 'Pending' || watch.actual != 'Timed Out')
           if watch.alert_sent? == false
             if watch.sms? && user.sms_configured?
               # puts "Sending alert SMS to #{user.twitter_username}."
